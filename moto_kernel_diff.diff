@@ -1,0 +1,163 @@
+diff --git a/drivers/clk/qcom/trace.h b/drivers/clk/qcom/trace.h
+index 9e90a85f2..bbb848bf8 100644
+--- a/drivers/clk/qcom/trace.h
++++ b/drivers/clk/qcom/trace.h
+@@ -79,7 +79,7 @@ DEFINE_EVENT(clk_measure_support, clk_measure,
+ /* This part must be outside protection */
+ 
+ #undef TRACE_INCLUDE_PATH
+-#define TRACE_INCLUDE_PATH .
++#define TRACE_INCLUDE_PATH ../../../drivers/clk/qcom/
+ 
+ #undef TRACE_INCLUDE_FILE
+ #define TRACE_INCLUDE_FILE trace
+diff --git a/drivers/cpuidle/governors/trace-cluster-lpm.h b/drivers/cpuidle/governors/trace-cluster-lpm.h
+index a3cd01464..dcd1e1cd8 100644
+--- a/drivers/cpuidle/governors/trace-cluster-lpm.h
++++ b/drivers/cpuidle/governors/trace-cluster-lpm.h
+@@ -111,7 +111,7 @@ TRACE_EVENT(cluster_enter,
+ #endif /* _TRACE_QCOM_LPM_H */
+ 
+ #undef TRACE_INCLUDE_PATH
+-#define TRACE_INCLUDE_PATH .
++#define TRACE_INCLUDE_PATH ../../../drivers/cpuidle/governors/
+ 
+ #undef TRACE_INCLUDE_FILE
+ #define TRACE_INCLUDE_FILE trace-cluster-lpm
+diff --git a/drivers/cpuidle/governors/trace-qcom-lpm.h b/drivers/cpuidle/governors/trace-qcom-lpm.h
+index dc42d35af..62ed8911d 100644
+--- a/drivers/cpuidle/governors/trace-qcom-lpm.h
++++ b/drivers/cpuidle/governors/trace-qcom-lpm.h
+@@ -81,7 +81,7 @@ TRACE_EVENT(gov_pred_hist,
+ #endif /* _TRACE_QCOM_LPM_H */
+ 
+ #undef TRACE_INCLUDE_PATH
+-#define TRACE_INCLUDE_PATH .
++#define TRACE_INCLUDE_PATH ../../../drivers/cpuidle/governors/
+ 
+ #undef TRACE_INCLUDE_FILE
+ #define TRACE_INCLUDE_FILE trace-qcom-lpm
+diff --git a/drivers/i2c/busses/i2c-qup-trace.h b/drivers/i2c/busses/i2c-qup-trace.h
+index 17534270c..c09136418 100644
+--- a/drivers/i2c/busses/i2c-qup-trace.h
++++ b/drivers/i2c/busses/i2c-qup-trace.h
+@@ -39,7 +39,7 @@ TRACE_EVENT(i2c_log_info,
+ 
+ /* This part must be outside protection */
+ #undef TRACE_INCLUDE_PATH
+-#define TRACE_INCLUDE_PATH .
++#define TRACE_INCLUDE_PATH ../../../drivers/i2c/busses/
+ #define TRACE_INCLUDE_FILE i2c-qup-trace
+ #include <trace/define_trace.h>
+ 
+diff --git a/drivers/platform/msm/qup-common-trace.h b/drivers/platform/msm/qup-common-trace.h
+index 127e9a632..3c2397f4f 100644
+--- a/drivers/platform/msm/qup-common-trace.h
++++ b/drivers/platform/msm/qup-common-trace.h
+@@ -39,7 +39,7 @@ TRACE_EVENT(geni_log_info,
+ 
+ /* This part must be outside protection */
+ #undef TRACE_INCLUDE_PATH
+-#define TRACE_INCLUDE_PATH .
++#define TRACE_INCLUDE_PATH ../../../drivers/platform/msm/
+ #define TRACE_INCLUDE_FILE qup-common-trace
+ #include <trace/define_trace.h>
+ 
+diff --git a/drivers/slimbus/trace.h b/drivers/slimbus/trace.h
+index 0d39f2f36..e0c7ec541 100644
+--- a/drivers/slimbus/trace.h
++++ b/drivers/slimbus/trace.h
+@@ -38,7 +38,7 @@ TRACE_EVENT(slimbus_dbg,
+ /* this part has to be here */
+ 
+ #undef TRACE_INCLUDE_PATH
+-#define TRACE_INCLUDE_PATH .
++#define TRACE_INCLUDE_PATH ../../drivers/slimbus
+ 
+ #undef TRACE_INCLUDE_FILE
+ #define TRACE_INCLUDE_FILE trace
+diff --git a/drivers/soc/qcom/dcvs/trace-dcvs.h b/drivers/soc/qcom/dcvs/trace-dcvs.h
+index 88213ea83..af0bc6d4d 100644
+--- a/drivers/soc/qcom/dcvs/trace-dcvs.h
++++ b/drivers/soc/qcom/dcvs/trace-dcvs.h
+@@ -309,7 +309,7 @@ TRACE_EVENT(bw_hwmon_debug,
+ #endif /* _TRACE_DCVS_H */
+ 
+ #undef TRACE_INCLUDE_PATH
+-#define TRACE_INCLUDE_PATH .
++#define TRACE_INCLUDE_PATH ../../../../drivers/soc/qcom/dcvs/
+ 
+ #undef TRACE_INCLUDE_FILE
+ #define TRACE_INCLUDE_FILE trace-dcvs
+diff --git a/drivers/soc/qcom/hyp_core_ctl_trace.h b/drivers/soc/qcom/hyp_core_ctl_trace.h
+index d8d3d5bcd..b1c04592a 100644
+--- a/drivers/soc/qcom/hyp_core_ctl_trace.h
++++ b/drivers/soc/qcom/hyp_core_ctl_trace.h
+@@ -6,7 +6,7 @@
+ #undef TRACE_SYSTEM
+ #define TRACE_SYSTEM hyp_core_ctl
+ #undef TRACE_INCLUDE_PATH
+-#define TRACE_INCLUDE_PATH .
++#define TRACE_INCLUDE_PATH ../../../drivers/soc/qcom/
+ #undef TRACE_INCLUDE_FILE
+ #define TRACE_INCLUDE_FILE hyp_core_ctl_trace
+ 
+diff --git a/drivers/spi/spi-qup-trace.h b/drivers/spi/spi-qup-trace.h
+index 4537aba0e..988eeb888 100644
+--- a/drivers/spi/spi-qup-trace.h
++++ b/drivers/spi/spi-qup-trace.h
+@@ -39,7 +39,7 @@ TRACE_EVENT(spi_log_info,
+ 
+ /* This part must be outside protection */
+ #undef TRACE_INCLUDE_PATH
+-#define TRACE_INCLUDE_PATH .
++#define TRACE_INCLUDE_PATH ../../drivers/spi/
+ #define TRACE_INCLUDE_FILE spi-qup-trace
+ #include <trace/define_trace.h>
+ 
+diff --git a/drivers/tty/serial/serial_trace.h b/drivers/tty/serial/serial_trace.h
+index 9f80b64e5..30568ce7f 100644
+--- a/drivers/tty/serial/serial_trace.h
++++ b/drivers/tty/serial/serial_trace.h
+@@ -34,6 +34,6 @@ TRACE_EVENT(serial_info,
+ 
+ /* This part must be outside protection */
+ #undef TRACE_INCLUDE_PATH
+-#define TRACE_INCLUDE_PATH .
++#define TRACE_INCLUDE_PATH ../../../drivers/tty/serial/
+ #define TRACE_INCLUDE_FILE serial_trace
+ #include <trace/define_trace.h>
+diff --git a/init/Kconfig b/init/Kconfig
+index da1a2659e..df85336ce 100644
+--- a/init/Kconfig
++++ b/init/Kconfig
+@@ -1337,7 +1337,6 @@ config CC_OPTIMIZE_FOR_PERFORMANCE
+ 
+ config CC_OPTIMIZE_FOR_PERFORMANCE_O3
+ 	bool "Optimize more for performance (-O3)"
+-	depends on ARC
+ 	help
+ 	  Choosing this option will pass "-O3" to your compiler to optimize
+ 	  the kernel yet more for performance.
+diff --git a/scripts/setlocalversion b/scripts/setlocalversion
+index 842936656..3b89b0ae7 100755
+--- a/scripts/setlocalversion
++++ b/scripts/setlocalversion
+@@ -117,7 +117,7 @@ scm_version()
+ 			git --no-optional-locks status -uno --porcelain 2>/dev/null ||
+ 			git diff-index --name-only HEAD
+ 		} | grep -qvE '^(.. )?scripts/package'; then
+-			printf '%s' -dirty
++			printf '%s'
+ 		fi
+ 
+ 		# All done with git
+@@ -141,7 +141,7 @@ scm_version()
+ 		# Are there uncommitted changes?
+ 		# These are represented by + after the changeset id.
+ 		case "$hgid" in
+-			*+|*+\ *) printf '%s' -dirty ;;
++			*+|*+\ *) printf '%s'  ;;
+ 		esac
+ 
+ 		# All done with mercurial

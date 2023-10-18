@@ -1,0 +1,49 @@
+name: build-eqs-kernel
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 8192
+          temp-reserve-mb: 2048
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+      - uses: actions/checkout@v4
+      - name: Setup environment
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ccache lzop cpio bzip2 zip flex bison gperf curl repo
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: install deps
+        run: |
+          bash install_deps.sh
+          mkdir moto
+      - name: sync repo
+        run: |
+          cd moto
+          bash ../sync_repo.sh
+      - name: patch_kernel_source
+        run: |
+          cd moto
+          bash ../patch_kernel_source.sh
+      - name: build
+        run: |
+          cd moto
+          bash ../build.sh
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: image
+          path: ${{ github.workspace }}/moto/kernel_platform/kernel-msm/arch/arm64/boot/Image
+
+
