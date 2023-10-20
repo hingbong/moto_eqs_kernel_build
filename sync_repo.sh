@@ -13,5 +13,5 @@ git clone --depth 1 --branch android-13-release-t1sq33.15-11-137-10 https://gith
 curl -OL "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh"
 sed -i "s/common/kernel-msm/g" setup.sh
 chmod +x setup.sh
-setup.sh main
+./setup.sh main
 
