@@ -10,6 +10,10 @@ cd kernel_platform
 
 git clone --depth 1 --branch MMI-T1SQS33.15-11-137-10-5 https://github.com/MotorolaMobilityLLC/kernel-msm.git
 
+cd kernel-msm/arch/arm64/boot/dts
+git clone --depth 1 --branch MMI-T1SQS33.15-11-137-10-5 https://github.com/MotorolaMobilityLLC/kernel-devicetree.git vendor
+cd ../../../..
+
 curl -OL "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh"
 sed -i "s/common/kernel-msm/g" setup.sh
 chmod +x setup.sh
